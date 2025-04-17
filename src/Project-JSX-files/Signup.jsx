@@ -18,7 +18,7 @@ function Signup() {
       })
       .catch(err => console.log(err));
   };
-
+  
   return (
     <div className="container">
       <div className="Blink-img">
