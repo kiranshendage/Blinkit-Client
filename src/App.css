@@ -36,3 +36,633 @@
     transform: rotate(360deg);
   }
 }
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* ***************under nav***************** */
+.under-nav{
+  height: 25px;
+  width: 100%;;
+  background-color:rgb(247, 241, 234);
+}
+.under-nav ul{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 0%;
+  padding-right: 43px;
+}
+.under-nav ul li{
+ font-weight: 600;
+}
+.under-nav ul Link li{
+  text-decoration: none;
+}
+li a {
+  text-decoration: none; /* Removes underline */
+  color: black; /* Sets text color */
+  font-weight: 600; /* Optional: Make it bold */
+}
+
+li a:hover {
+  color: rgb(92, 143, 83); /* Change color on hover */
+}
+
+/* **************Rolling.jsx************** */
+/* Container for all cards */
+.dairy-product {
+  display: flex;
+   flex-wrap: wrap; /*Allows cards to wrap on smaller screens */
+   gap: 40px;/* Adds space between cards */
+  justify-content: center; /* Aligns items properly */
+}
+
+/* Individual Card */
+.dairy-product-card {
+  /* width: 220px; Fixed width to keep cards in a row */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  background-color: white;
+  flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* Hover Effects */
+/* .dairy-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.05);
+} */
+
+/* Image inside the card */
+.dairy-product-card-upper img {
+  /* width: 100%;
+  border-radius: 10px 10px 0 0; */
+  transition: transform 0.3s ease;
+}
+
+.dairy-product-card:hover .dairy-product-card-upper img {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Align text properly */
+.dairy-product-card span {
+ 
+}
+
+/* Button */
+.price-b {
+  background-color: #cdf5bd;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.price-b:hover {
+  background: #9ed488;
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
+/* Button click effect */
+.price-b:active {
+  background: #a8f68a;
+  transform: scale(0.98);
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* *********************Big Card**************************************************************************************************************** */
+
+/* Center container */
+.cold-drink-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  padding: 20px;
+  background: #f8f9fa;
+  margin-left: 250px;
+}
+
+/* Big card styling */
+.cold-drink-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+  width: 400px;  /* Increased width */
+  height: 520px; /* Increased height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Card hover animation */
+.cold-drink-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image styling */
+.card-image img {
+  width: 100%;
+  height: 250px; /* Adjusted height for larger image */
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Image hover effect */
+.card-image img:hover {
+  transform: scale(1.1);
+}
+
+/* Details section */
+.card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Name */
+.drink-name {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Quantity */
+.drink-size {
+  font-size: 18px;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* Price */
+.drink-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e63946;
+  margin-top: 10px;
+}
+
+/* Buy Product Button */
+.add-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #007bff; /* Blue color */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Button hover effect */
+.add-button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Button click effect */
+.add-button:active {
+  background: #00408d;
+  transform: scale(0.98);
+}
+
+/* ******************************************************************Review********************************************************************* */
+/* Container for Reviews */
+.reviews-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.8s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+/* Reviews Heading */
+.reviews-section h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Review Card */
+.review-card {
+  background: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeIn 0.9s ease-in-out;
+}
+
+.review-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* User Info */
+.review-user {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 18px;
+}
+
+/* Review Comment */
+.review-comment {
+  font-style: italic;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Add Review Section***************************************** */
+.average-rating{
+  /* margin-left: 50px; */
+}
+.add-review-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #e9ecef;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease-in-out;
+  margin-left: 50px;
+}
+
+.add-review-section h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Review Form */
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.3s ease-in-out;
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+  border: 1px solid #007bff;
+  outline: none;
+}
+
+.review-form textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* Submit Button*/
+.submit-button {
+  background: #007bff;
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.submit-button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Back Button ***********************************************/
+.back-button {
+  display: block;
+  width: max-content;
+  margin: 20px auto;
+  padding: 10px 16px;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.back-button:hover {
+  background: #e84118;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* *****************************Login************************* */
+/* .login-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.login-page {
+  border: 2px solid grey;
+  padding: 20px;
+  width: 350px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Loginlogo img {
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.Loginhead h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.LoginSignup {
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.Logininput {
+  height: 35px;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin-top: 5px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.Logininput1 {
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #28a745;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.Logininput1:hover {
+  background-color: #218838;
+}
+
+.login-last {
+  font-size: 12px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.login-last a {
+  color: #007bff;
+  text-decoration: none;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.login-last a:hover {
+  text-decoration: underline;
+} */
+.signup-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signup-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.signup-input label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.signup-input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signup-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #0056b3;
+}
+
+.login-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.login-page {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-page h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-page input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-page button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.login-page button:hover {
+  background-color: #0056b3;
+}
+
+.login-page p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.login-page p button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-page p button:hover {
+  color: #0056b3;
+}
