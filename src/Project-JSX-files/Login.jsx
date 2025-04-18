@@ -13,11 +13,12 @@ function Login() {
     axios.post('http://localhost:5444/login', { email, password })
       .then((result) => {
         console.log(result);
-        if (result.data === "Success") {
+        console.log(result.data);
+        if (result.data.success) {
           navigate('/');
         } else {
-          alert(result.data);
-        }
+          alert(result.data.message);
+        }        
       })
       .catch(err => console.log(err));
   };

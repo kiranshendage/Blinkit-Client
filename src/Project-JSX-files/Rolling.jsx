@@ -42,7 +42,7 @@ const Rolling = () => {
                         
                         <div key={item.id} className="dairy-product-card">
                             <div className="dairy-product-card-upper">
-                                <Link to={`/RollingName/${item.name}`}><img src={item.image} alt="" /> </Link>
+                                <Link to={`/RollingName/${item.name}`}><img src={item.image} alt={item.name} /> </Link>
                             </div>
                             <span className="ear">*EARLIST</span>
                             <span className="hed">{item.name}</span>
