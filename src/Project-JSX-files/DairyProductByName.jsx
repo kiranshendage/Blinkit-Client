@@ -1,59 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { useParams  } from "react-router-dom";
-// import axios from "axios";
-
-// const DairyProductByName = () => {
-//   const { name } = useParams(); // Get restaurant ID from URL
-//   const [coldDrink, setColdDrink] = useState(null);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     axios
-//       .get(`http://localhost:5444/DairyProductName/${name}`)
-//       .then((response) => {
-//         console.log("API Response:", response.data); // Debugging
-//         setColdDrink(response.data); // Assuming API returns a object
-//         setLoading(false);
-//       })
-//       .catch((error) => {
-//         console.error("Error fetching data:", error);
-//         setError(error.message);
-//         setLoading(false);  
-//       });
-//   }, [name]);
-
-//   if (loading) return <p>Loading...</p>;
-//   if (error) return <p>Error: {error}</p>;
-//   if (!coldDrink) return <p>No coldrink found.</p>;
-
-//   return (
-//     <div className="cold-drink-container">
-//       <div className="cold-drink-grid">
-//         {coldDrink.map((item) => (
-//           <div key={item.id} className="cold-drink-card">
-//             <div className="card-image">
-//               <img src={item.image} alt={item.name} />
-//             </div>
-//             <div className="card-details">
-//               <span className="drink-name">{item.name}</span>
-//               <span className="drink-size">{item.quantity}</span>
-//               <span className="drink-price">{item.price}</span>
-//               <button className="add-button">Buy Product</button>
-//               <h3>Pure, fresh, and full of life - that's dairy for you!</h3>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-
-// export default DairyProductByName;
-
-
-
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -66,10 +10,10 @@ const DairyProductByName = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const [newReview, setNewReview] = useState({ username: "", rating: 5, comment: "" });
-
+  const serverUrl = process.env.REACT_APP_SERVER_URL;
   useEffect(() => {
     axios
-      .get(`https://blinkit-server-mongo.onrender.com/DairyProductName/${name}`)
+      .get(`${serverUrl}/DairyProductName/${name}`)
       .then((response) => {
         console.log("API Response:", response.data);
         setColdDrink(response.data);
@@ -80,7 +24,7 @@ const DairyProductByName = () => {
         setError(error.message);
         setLoading(false);
       });
-  }, [name]);
+  }, [name,serverUrl]);
 
   const handleReviewSubmit = (e) => {
     e.preventDefault();

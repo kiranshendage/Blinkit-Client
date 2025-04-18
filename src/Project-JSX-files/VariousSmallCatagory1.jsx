@@ -5,9 +5,9 @@ const VariousSmallCatagory1 = () => {
     const [variousSmallCatagory1, setVariousSmallCatagory1] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     useEffect(() => {
-        axios.get("https://blinkit-server-mongo.onrender.com/VariousSmallCatagory1")
+        axios.get(`${serverUrl}/VariousSmallCatagory1`)
             .then((response) => {
                 console.log("API Response:", response.data);
                 if (Array.isArray(response.data.variousSmallCatagory1List)) {
@@ -22,7 +22,7 @@ const VariousSmallCatagory1 = () => {
                 setError(error.message);
                 setLoading(false);
             });
-    }, []);
+    }, [serverUrl]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;

@@ -6,9 +6,9 @@ const ColdDrink = () => {
     const [coldDrink, setColdDrink] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     useEffect(() => {
-        axios.get("https://blinkit-server-mongo.onrender.com/ColdDrink")
+        axios.get(`${serverUrl}/ColdDrink`)
             .then((response) => {
                 console.log("API Response:", response.data);
                 if (Array.isArray(response.data.ColdDrinkList)) {
@@ -23,7 +23,7 @@ const ColdDrink = () => {
                 setError(error.message);
                 setLoading(false);
             });
-    }, []);
+    }, [serverUrl]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;

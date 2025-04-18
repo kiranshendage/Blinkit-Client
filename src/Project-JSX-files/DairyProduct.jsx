@@ -6,9 +6,9 @@ const DairyProduct = () => {
     const [dairyProduct, setDairyProduct] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     useEffect(() => {
-        axios.get("https://blinkit-server-mongo.onrender.com/DairyProduct")
+        axios.get(`${serverUrl}/DairyProduct`)
             .then((response) => {
                 console.log("API Response:", response.data);
                 if (Array.isArray(response.data.dairyProductList)) {
@@ -23,7 +23,7 @@ const DairyProduct = () => {
                 setError(error.message);
                 setLoading(false);
             });
-    }, []);
+    }, [serverUrl]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;

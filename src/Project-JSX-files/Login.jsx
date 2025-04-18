@@ -7,10 +7,10 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
+  const serverUrl = process.env.REACT_APP_SERVER_URL;
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5444/login', { email, password })
+    axios.post(`${serverUrl}/login`, { email, password })
       .then((result) => {
         console.log(result);
         console.log(result.data);

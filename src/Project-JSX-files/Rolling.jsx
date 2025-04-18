@@ -7,9 +7,9 @@ const Rolling = () => {
     const [rolling, setRolling] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     useEffect(() => {
-        axios.get("https://blinkit-server-mongo.onrender.com/Rolling")
+        axios.get(`${serverUrl}/Rolling`)
             .then((response) => {
                 console.log("API Response:", response.data);
                 if (Array.isArray(response.data.rollingList)) {
@@ -24,7 +24,7 @@ const Rolling = () => {
                 setError(error.message);
                 setLoading(false);
             });
-    }, []);
+    }, [serverUrl]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;

@@ -6,9 +6,9 @@ const Snack = () => {
     const [snack, setSnack] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     useEffect(() => {
-        axios.get("https://blinkit-server-mongo.onrender.com/Snack")
+        axios.get(`${serverUrl}/Snack`)
             .then((response) => {
                 console.log("API Response:", response.data);
                 if (Array.isArray(response.data.snackList)) {
@@ -23,7 +23,7 @@ const Snack = () => {
                 setError(error.message);
                 setLoading(false);
             });
-    }, []);
+    }, [serverUrl]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;

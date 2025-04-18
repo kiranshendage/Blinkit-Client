@@ -8,10 +8,10 @@ function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
+  const serverUrl = process.env.REACT_APP_SERVER_URL;
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5444/register', { name, email, password })
+    axios.post(`${serverUrl}/register`, { name, email, password })
       .then((result) => {
         console.log(result);
         navigate('/login'); // Navigate only after success

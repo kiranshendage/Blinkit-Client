@@ -7,10 +7,11 @@ const Ads = () => {
   const [dataa, setDataa] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const serverUrl = process.env.REACT_APP_SERVER_URL;
 
   useEffect(() => {
     axios
-      .get(`https://blinkit-server-mongo.onrender.com/SelectAds/${city}`)
+      .get(`${serverUrl}/SelectAds/${city}`)
       .then((response) => {
         console.log("API Response:", response.data); // Debugging
         setDataa(response.data); // Assuming API returns a object
@@ -21,7 +22,7 @@ const Ads = () => {
         setError(error.message);
         setLoading(false);  
       });
-  }, [city]);
+  }, [city,serverUrl]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
